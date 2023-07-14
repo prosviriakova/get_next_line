@@ -14,5 +14,13 @@
 
 char *get_next_line(int fd)
 {
-
+    char    *buff;
+    ssize_t bytesRead;
+    
+    if (fd < 0 || BUFFER_SIZE <= 0)
+        return (NULL);
+    buff = (char *)malloc((BUFFER_SIZE + 1) * sizeof(char));
+    while ((bytesRead = read(fd, buff, BUFFER_SIZE - 1)) > 0)
+        buff[bytesRead] = '\0'; // Add null-terminator    
+    return buff;
 }
