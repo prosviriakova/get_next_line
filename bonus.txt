@@ -1,0 +1,6 @@
+Hello, world!
+This is a test file.
+It has several lines of text.
+
+This is another line of text.
+This is the last line without a new line symbol at the end.

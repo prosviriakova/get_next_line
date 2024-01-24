@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.c                                    :+:      :+:    :+:   */
+/*   get_next_line_bonus.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: oprosvir <oprosvir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/17 12:15:47 by oprosvir          #+#    #+#             */
-/*   Updated: 2024/01/22 11:28:29 by oprosvir         ###   ########.fr       */
+/*   Created: 2024/01/22 11:35:50 by oprosvir          #+#    #+#             */
+/*   Updated: 2024/01/24 14:06:49 by oprosvir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "get_next_line_bonus.h"
 
 static char	*read_buffer(int fd)
 {
@@ -89,16 +89,16 @@ static char	*extract_line(char **saved_line)
 
 char	*get_next_line(int fd)
 {
-	static char	*saved_line;
+	static char	*saved_line[MAX_FD];
 
-	if (fd < 0 || BUFFER_SIZE <= 0)
+	if (fd < 0 || BUFFER_SIZE <= 0 || fd >= MAX_FD)
 		return (NULL);
-	saved_line = read_from_fd(fd, saved_line);
-	if (!saved_line || saved_line[0] == '\0')
+	saved_line[fd] = read_from_fd(fd, saved_line[fd]);
+	if (!saved_line[fd] || saved_line[fd][0] == '\0')
 	{
-		free(saved_line);
-		saved_line = NULL;
+		free(saved_line[fd]);
+		saved_line[fd] = NULL;
 		return (NULL);
 	}
-	return (extract_line(&saved_line));
+	return (extract_line(&saved_line[fd]));
 }
