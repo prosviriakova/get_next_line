@@ -17,6 +17,14 @@ FINAL GRADE:
 | Libft authorized | No                                  |
 | Description      | Write a function that returns a line read from a file descriptor |
 
+> To compile the program with main.c and read from a text file with a custom buffer size, use the following command:<br>
+> `gcc -Wall -Werror -Wextra -D BUFFER_SIZE=42 get_next_line.c get_next_line_utils.c get_next_line.h main.c -o gnl`
+
+> To read from standard input, compile the program and run it. Then, type your text in the console and interrupt the input stream with Ctrl+D (EOF).
+
+> To redirect input from one file to another, execute: 
+> `./gnl < text.txt > output.txt`
+
 There are two versions of the get_next_line() function.
 * The mandatory version, which requires a file descriptor as a parameter.
 * The bonus version, which allows the management of multiple file descriptors simultaneously.
