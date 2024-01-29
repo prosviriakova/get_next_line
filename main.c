@@ -4,53 +4,53 @@
 #include <stdio.h>
 
 // read from text
-// int	main(void)
-// {
-//     char *line;
-//     int fd;
-//     int count;
+int	main(void)
+{
+    char *line;
+    int fd;
+    int count;
 
-//     count = 0;
-//     fd = open("text.txt", O_RDONLY);
-//     while (1)
-//     {
-//         line = get_next_line(fd);
-//         if (!line)
-//             break ;
-//         count++;
-//         printf("[%d]:%s", count, line);
+    count = 0;
+    fd = open("text.txt", O_RDONLY);
+    while (1)
+    {
+        line = get_next_line(fd);
+        if (!line)
+            break ;
+        count++;
+        printf("[%d]:%s", count, line);
 
-//         // print length
-//         size_t len = ft_strlen(line);
-//         printf(" (length: %zu)", len);
+        // print length
+        size_t len = ft_strlen(line);
+        printf(" (length: %zu)", len);
 
-//         // check for \n and NULL at the end of the line
-//         if (len > 0 && line[len - 1] == '\n')
-//             printf(" [newline]");
-//         if (line[len] == '\0')
-//             printf(" [null-terminated]\n");
+        // check for \n and NULL at the end of the line
+        if (len > 0 && line[len - 1] == '\n')
+            printf(" [newline]");
+        if (line[len] == '\0')
+            printf(" [null-terminated]\n");
 
-//         free(line);
-//     }
-//     close(fd);
-//     return (0);
-// }
+        free(line);
+    }
+    close(fd);
+    return (0);
+}
 
 // read from std input
-// int main()
-// {
-//     char *line;
+/* int main()
+{
+    char *line;
 
-//     while ((line = get_next_line(0)) != NULL)
-//     {
-//         printf("%s", line);
-//         free(line);
-//     }
-//     return 0;
-// }
+    while ((line = get_next_line(0)) != NULL)
+    {
+        printf("%s", line);
+        free(line);
+    }
+    return 0;
+} */
 
 // bonus main reads 2 files line by line in turn
-int main()
+/* int main()
 {
     char *line;
     int fd1, fd2;
@@ -90,4 +90,4 @@ int main()
     close(fd1);
     close(fd2);
     return 0;
-}
+} */
