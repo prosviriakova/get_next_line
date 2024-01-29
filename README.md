@@ -1,7 +1,7 @@
 # get_next_line
 
 ```
-FINAL GRADE: 
+FINAL GRADE: 125/100
 ```
 
  A function that reads a line from a file descriptor and returns it, allowing line-by-line reading of a text file.
