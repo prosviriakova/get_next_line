@@ -6,7 +6,7 @@
 /*   By: oprosvir <oprosvir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 11:36:07 by oprosvir          #+#    #+#             */
-/*   Updated: 2024/01/25 11:25:50 by oprosvir         ###   ########.fr       */
+/*   Updated: 2024/01/28 15:42:27 by oprosvir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,6 @@
 
 # define MAX_FD 1024
 
-# include <stdint.h>
 # include <stdlib.h>
 # include <unistd.h>
 
